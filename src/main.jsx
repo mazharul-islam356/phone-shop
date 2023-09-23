@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
 import './index.css'
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import {  RouterProvider, createBrowserRouter } from 'react-router-dom'
 import MainLayout from './mainLayout/MainLayout.jsx'
 import Home from './components/Pages/Home/Home.jsx'
 import Favourite from './components/Pages/Favourite/favourite.jsx'
 import Login from './components/Pages/Login/Login.jsx'
+import PhoneCard from './components/Pages/Home/Phones/PhoneCard'
+import SeeDetails from './components/SeeDetails/SeeDetails'
 const myproject = createBrowserRouter([
   {
     path:'/',
@@ -14,7 +16,8 @@ const myproject = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader: ()=> fetch('../phones.json')
       },
       {
         path:'/favourite',
@@ -23,6 +26,10 @@ const myproject = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/seeDetails',
+        element:<SeeDetails></SeeDetails>
       }
       
       

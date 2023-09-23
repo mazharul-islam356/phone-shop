@@ -5,8 +5,10 @@ import Logo from "../components/Pages/Logo/Logo";
 
 const MainLayout = () => {
     return (
-        <div>
+        
+        <div className="mx-10 my-10">
             <div className="flex justify-between items-center mt-2 px-10 shadow-md p-4">
+                
             <Logo></Logo>
             <LinkRoute></LinkRoute> 
                 </div>         
